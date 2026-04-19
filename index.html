@@ -9,6 +9,7 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     />
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <nav>
@@ -18,7 +19,69 @@
         <li>
           <a href="#"><i class="fa-solid fa-house"></i> Home</a>
         </li>
+        <li>
+          <a href="#games"><i class="fa-solid fa-joystick"></i> Games</a>
+        </li>
+        <li>
+          <a href="#"><i class="fa-solid fa-trophy"></i> Scores</a>
+        </li>
+        <li>
+          <a href="#"><i class="fa-solid fa-circle-info"> About</i></a>
+        </li>
       </ul>
     </nav>
+
+    <section class="hero">
+      <h1>Welcome to Retro Arcade</h1>
+      <p>
+        Play classical mini-games in one awesome place. Challenge yourself, beat
+        high score, unlock achievements, and enjoy a stylish retro gaming
+        experience.
+      </p>
+      <a href="#games" class="btn"
+        ><i class="fa-solid fa-play"></i> Start Playing</a
+      >
+    </section>
+
+    <section class="stats">
+      <div class="stat-box">
+        <h3>5+</h3>
+        <p>Mini games</p>
+      </div>
+      <div class="stat-box">
+        <h3>∞</h3>
+        <p>Fun Levels</p>
+      </div>
+      <div class="stat-box">
+        <h3>100%</h3>
+        <p>Free To Play</p>
+      </div>
+    </section>
+
+    <section class="games-section" id="games">
+      <h2>Choose Your Game</h2>
+
+      <div class="games-grid">
+        <div class="card">
+          <div class="icon"><i class="fa-solid fa-dragon"></i></div>
+          <h3>Snake</h3>
+          <p>
+            Eat food, growlonger, and avoid crashing into walls or yourself.
+          </p>
+          <a href="games/snake.html" class="play-btn">Play Now</a>
+        </div>
+
+        <div class="card">
+          <div class="icon"><i class="fa-solid fa-table-cells"></i></div>
+          <h3>Tic Tac Toe</h3>
+          <p>
+            Challenge a friend and win with smart moves in this classic battle.
+          </p>
+          <a href="games/snake.html" class="play-btn">Play Now</a>
+        </div>
+      </div>
+    </section>
+
+    <footer>© 2026 Retro Arcade | Built by AVA</footer>
   </body>
 </html>
