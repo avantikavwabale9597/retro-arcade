@@ -213,3 +213,39 @@ footer {
   font-size: 14px;
   border-top: 1px solid rgba(255, 255, 255, 0.06);
 }
+
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    gap: 15px;
+    padding: 18px;
+  }
+
+  nav ul {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 14px;
+  }
+
+  .hero h1 {
+    font-size: 40px;
+  }
+
+  .hero p {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    padding-top: 55px;
+  }
+
+  .hero h1 {
+    font-size: 32px;
+  }
+
+  .logo {
+    font-size: 24px;
+  }
+}
