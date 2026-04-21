@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sudoku Arcade</title>
+    <link rel="stylesheet" href="sudoku.css" />
+  </head>
+  <body>
+    <div class="game-container">
+      <h1>Sudoku</h1>
+
+      <div class="top-bar">
+        <div class="info-box">Mode: <span id="modeText">None</span></div>
+        <div class="info-box">⏱️ <span id="timer">00:00</span></div>
+        <div class="info-box">❌ <span id="mistakes">0</span>/3</div>
+      </div>
+
+      <div class="modes">
+        <button onclick="startGame('easy')">Easy</button>
+        <button onclick="startGame('medium')">Medium</button>
+        <button onclick="startGame('hard')">Hard</button>
+        <button onclick="restartGame()">Restart</button>
+      </div>
+
+      <div id="message">Choose a mode to start</div>
+
+      <div id="board" class="board"></div>
+    </div>
+
+    <script src="sudoku.js"></script>
+  </body>
+</html>
