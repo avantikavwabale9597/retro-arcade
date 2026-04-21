@@ -9,8 +9,139 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #0b1020;
+  background: linear-gradient(180deg, #0b1020, #111827);
   font-family: Arial, sans-serif;
-  color: e5e7eb;
+  color: #e5e7eb;
   padding: 20px;
+}
+
+.game-container {
+  width: 100%;
+  max-width: 760px;
+  background: #111827;
+  border: 1px solid #334155;
+  border-radius: 20px;
+  padding: 25px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+}
+
+h1 {
+  font-size: 42px;
+  margin-bottom: 20px;
+  color: #ffffff;
+}
+
+.top-bar {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.info-box {
+  background: #0f172a;
+  border: 1px solid #334155;
+  padding: 14px;
+  border-radius: 12px;
+  font-size: 16px;
+}
+
+.modes {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 15px;
+}
+
+button {
+  padding: 14px 22px;
+  border: none;
+  border-radius: 12px;
+  background: #2563eb;
+  color: white;
+  font-size: 17px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+button:hover {
+  background: #3b82f6;
+  transform: translateY(-2px);
+}
+
+#message {
+  margin: 15px 0;
+  font-size: 18px;
+  min-height: 24px;
+  color: #cbd5e1;
+}
+
+.board {
+  margin: 20px auto 0;
+  display: grid;
+  gap: 3px;
+  background: #475569;
+  padding: 5px;
+  border-radius: 14px;
+  width: min(92vw, 540px);
+}
+
+.cell {
+  background: #1e293b;
+  border: none;
+  outline: none;
+  text-align: center;
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 24px;
+  aspect-ratio: 1/1;
+  width: 100%;
+  border-radius: 6px;
+}
+
+.cell:focus {
+  background: #334155;
+}
+
+.prefilled {
+  background: #0f172a;
+  color: #60a5fa;
+}
+
+.wrong {
+  background: #7f1d1d;
+  color: #fecaca;
+}
+
+.win {
+  box-shadow: 0 0 18px rgba(52, 211, 153, 0.35);
+}
+
+@media (max-width: 700px) {
+  .top-bar {
+    grid-template-columns: 1fr;
+  }
+
+  .game-container {
+    padding: 18px;
+  }
+
+  h1 {
+    font-size: 32px;
+  }
+
+  button {
+    width: 100%;
+  }
+
+  .modes {
+    flex-direction: column;
+  }
+
+  .cell {
+    font-size: 20px;
+  }
 }
