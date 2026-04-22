@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, intial-scale=1.0" />
+    <title>Color Match</title>
+    <link rel="stylesheet" href="color.css" />
+  </head>
+  <body>
+    <div class="game-container">
+      <h1>Color Match</h1>
+
+      <div class="top-bar">
+        <div class="info-box">⏱️ <span id="timer">00</span></div>
+        <div class="info-box">Score: <span id="score">0</span></div>
+      </div>
+
+      <div class="modes">
+        <button onclick="startGame(30)">30 Sec</button>
+        <button onclick="startGame(60)">60 Sec</button>
+      </div>
+
+      <div id="word" class="word">READY?</div>
+
+      <div class="buttons">
+        <button onclick="checkAnswer('red')" style="background: #ef4444">
+          Red
+        </button>
+        <button onclick="checkAnswer('blue')" style="background: #3b82f6">
+          Blue
+        </button>
+        <button onclick="checkAnswer('green')" style="background: #22c55e">
+          Green
+        </button>
+        <button onclick="checkAnswer('yellow')" style="background: #eab308">
+          Yellow
+        </button>
+        <button onclick="checkAnswer('purple')" style="background: #a855f7">
+          Purple
+        </button>
+        <button onclick="checkAnswer('orange')" style="background: #f97316">
+          Orange
+        </button>
+        <button onclick="checkAnswer('pink')" style="background: #ec4899">
+          Pink
+        </button>
+        <button onclick="checkAnswer('cyan')" style="background: #06b6d4">
+          Cyan
+        </button>
+        <button onclick="checkAnswer('lime')" style="background: #84cc16">
+          Lime
+        </button>
+        <button
+          onclick="checkAnswer('white')"
+          style="background: #ffffff; color: black"
+        >
+          White
+        </button>
+      </div>
+      <div id="message"></div>
+    </div>
+
+    <script src="color.js"></script>
+  </body>
+</html>
