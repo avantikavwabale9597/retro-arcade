@@ -83,6 +83,12 @@ Retro-Arcade/
 
 ---
 
+## 🏆 Project Structure
+
+- Scores are saved using localStorage and displayed on the home screen.
+
+---
+
 ## ✨ Highlights
 
 - 🎨 Consistent dark arcade UI
@@ -100,6 +106,28 @@ Retro-Arcade/
 - JavaScript (Vanilla)
 
 ---
+
+## 📸 Screenshots
+
+### 🏠 Home Page
+
+![Home](project-root/home-demo.png)
+
+### 🐍 Snake Game
+
+![Snake](project-root/snake-demo.png)
+
+### Tictactoe Game
+
+![Tictactoe](project-root/xo-demo.png)
+
+### 🧩 Sudoku
+
+![Sudoku](project-root/sudoku-demo.png)
+
+### 🎨 Color Match
+
+![Color Match](project-root/color-match-demo.png)
 
 ## ▶️ Run Locally
 
@@ -129,4 +157,4 @@ Build a **multi-game arcade experience** while learning:
 
 ## ⭐
 
-If you like this project, drop a ⭐ — it helps!
+If you like this project, drop a ⭐ it helps!
