@@ -32,3 +32,79 @@ let currentColor = "";
 let score = 0;
 let timeLeft = 0;
 let gameInterval;
+let selectedTime = 30;
+
+function startGame(time) {
+  selectedTime = time;
+  score = 0;
+  timeLeft = time;
+
+  scoreEl.textContent = score;
+  timerEl.textContent = timeLeft;
+  messageEl.textContent = "";
+
+  nextRound();
+
+  clearInterval(gameInterval);
+  gameInterval = setInterval(() => {
+    timeLeft--;
+    timerEl.textContent = timeLeft;
+
+    if (timeLeft <= 0) {
+      endGame();
+    }
+  }, 1000);
+}
+
+function nextRound() {
+  const randomWord = colors[Math.floor(Math.random() * colors.length)];
+  const randomColor = colors[Math.floor(Math.random() * colors.length)];
+
+  currentColor = randomColor;
+
+  wordEl.textContent = randomWord.toUpperCase();
+  wordEl.style.color = colorMap[randomColor];
+}
+
+function checkAnswer(answer) {
+  if (timeLeft <= 0) return;
+
+  if (answer === currentColor) {
+    score++;
+    messageEl.textContent = "Correct!";
+  } else {
+    score--;
+    messageEl.textContent = "Wrong!";
+  }
+
+  scoreEl.textContent = score;
+  nextRound();
+}
+function restartGame() {
+  clearInterval(gameInterval);
+
+  score = 0;
+  timeLeft = selectedTime;
+
+  scoreEl.textContent = score;
+  timerEl.textContent = timeLeft;
+  messageEl.textContent = "Restarted!";
+
+  nextRound();
+
+  gameInterval = setInterval(() => {
+    timeLeft--;
+    timerEl.textContent = timeLeft;
+
+    if (timeLeft <= 0) {
+      endGame();
+    }
+  }, 1000);
+}
+
+function endGame() {
+  clearInterval(gameInterval);
+  wordEl.textContent = "TIME UP!";
+  wordEl.style.color = "#ffffff";
+  messageEl.textContent = "Final Score: " + score;
+}

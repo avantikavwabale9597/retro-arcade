@@ -48,6 +48,7 @@ button {
   font-weight: bold;
   color: white;
   transition: 0.2s;
+  color: black;
 }
 button:hover {
   transform: scale(1.05);
