@@ -36,6 +36,12 @@ const wrongSound = () => beep(220, 180);
 const winSound = () => beep(900, 250);
 const loseSound = () => beep(150, 350);
 
+function formatTime(sec) {
+  let min = String(Math.floor(sec / 60)).padStart(2, "0");
+  let s = String(sec % 60).padStart(2, "0");
+  return `${min}:${s}`;
+}
+
 function startGame(mode) {
   clickSound();
 
@@ -45,9 +51,12 @@ function startGame(mode) {
 
   mistakesEl.textContent = "0/3";
   timerEl.textContent = "00:00";
-  messageEl.textContent = "Game Started!";
 
   modeText.textContent = mode.charAt(0).toUpperCase() + mode.slice(1);
+
+  // 🔥 SHOW BEST TIME
+  let best = localStorage.getItem("sudokuBest_" + currentMode);
+  messageEl.textContent = best ? "Best: " + formatTime(best) : "Game Started!";
 
   if (mode === "easy") {
     size = 4;
@@ -72,9 +81,7 @@ function startTimer() {
 
   timeInterval = setInterval(() => {
     seconds++;
-    let min = String(Math.floor(seconds / 60)).padStart(2, "0");
-    let sec = String(seconds % 60).padStart(2, "0");
-    timerEl.textContent = `${min}:${sec}`;
+    timerEl.textContent = formatTime(seconds);
   }, 1000);
 }
 
@@ -84,7 +91,6 @@ function generateSudoku() {
     .map(() => Array(size).fill(0));
 
   fillBoard(solution);
-
   puzzle = solution.map((row) => [...row]);
 
   let removeCount = 0;
@@ -166,10 +172,6 @@ function renderBoard() {
       input.classList.add("cell");
       input.maxLength = 1;
 
-      input.style.display = "flex";
-      input.style.justifyContent = "center";
-      input.style.alignItems = "center";
-
       if ((c + 1) % box === 0 && c !== size - 1) {
         input.style.borderRight = "3px solid #6b7280";
       }
@@ -197,7 +199,6 @@ function renderBoard() {
 
 function checkInput(input, row, col) {
   let raw = input.value.trim();
-
   if (raw === "") return;
 
   let val = Number(raw);
@@ -248,10 +249,18 @@ function checkWin() {
   clearInterval(timeInterval);
   winSound();
 
-  messageEl.textContent = "You Solved It!!";
-  boardEl.classList.add("win");
+  // 🔥 CHECK NEW RECORD
+  let key = "sudokuBest_" + currentMode;
+  let oldBest = localStorage.getItem(key);
 
-  saveStats();
+  if (!oldBest || seconds < Number(oldBest)) {
+    localStorage.setItem(key, seconds);
+    messageEl.textContent = "New Record! 🎉 " + formatTime(seconds);
+  } else {
+    messageEl.textContent = "Solved! Time: " + formatTime(seconds);
+  }
+
+  boardEl.classList.add("win");
 }
 
 function gameOver() {
@@ -292,20 +301,5 @@ function renderSolution() {
       div.textContent = solution[r][c];
       boardEl.appendChild(div);
     }
-  }
-}
-
-function saveStats() {
-  let key = "sudokuBest_" + currentMode;
-  let wins = Number(localStorage.getItem("sudokuWins")) || 0;
-
-  wins++;
-  localStorage.setItem("sudokuWins", wins);
-  localStorage.setItem("sudokuLastMode", currentMode);
-
-  let oldBest = localStorage.getItem(key);
-
-  if (!oldBest || seconds < Number(oldBest)) {
-    localStorage.setItem(key, seconds);
   }
 }

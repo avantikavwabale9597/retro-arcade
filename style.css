@@ -263,3 +263,43 @@ footer {
   height: 60px;
   object-fit: contain;
 }
+.coming-label {
+  margin-top: 10px;
+  padding: 6px 12px;
+  background: #334155;
+  border-radius: 8px;
+  font-size: 14px;
+  display: inline-block;
+}
+.scoreboard {
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.scoreboard h2 {
+  margin-bottom: 20px;
+  font-size: 28px;
+}
+
+.score-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 15px;
+  max-width: 800px;
+  margin: auto;
+}
+
+.score-card {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  padding: 18px;
+}
+
+.score-card h3 {
+  margin-bottom: 10px;
+}
+.score-card p {
+  font-size: 18px;
+  color: #cbd5e1;
+}

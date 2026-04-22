@@ -104,7 +104,14 @@ function restartGame() {
 
 function endGame() {
   clearInterval(gameInterval);
+
   wordEl.textContent = "TIME UP!";
   wordEl.style.color = "#ffffff";
   messageEl.textContent = "Final Score: " + score;
+
+  let best = Number(localStorage.getItem("colorHighScore")) || 0;
+
+  if (score > best) {
+    localStorage.setItem("colorHighScore", score);
+  }
 }
