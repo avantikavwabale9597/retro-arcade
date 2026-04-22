@@ -82,35 +82,49 @@ button:hover {
 .board {
   margin: 20px auto 0;
   display: grid;
-  gap: 3px;
-  background: #475569;
-  padding: 5px;
+  gap: 1px;
+  background: #64748b;
+  padding: 4px;
   border-radius: 14px;
   width: min(92vw, 540px);
 }
 
+.box-dark {
+  background: #0b1220;
+}
+
 .cell {
-  background: #1e293b;
-  border: none;
-  outline: none;
-  text-align: center;
-  color: #ffffff;
+  background: #111827;
+  border: 0.5px solid #1f2937;
   font-weight: bold;
   font-size: 24px;
   aspect-ratio: 1/1;
   width: 100%;
-  border-radius: 6px;
-}
-
-.cell:focus {
-  background: #334155;
-}
-
-.prefilled {
-  background: #0f172a;
   color: #60a5fa;
 }
 
+input.cell {
+  text-align: center;
+  color: #60a5fa;
+  outline: none;
+}
+
+input.cell.prefilled {
+  background: #0f172a;
+  color: #ffffff;
+}
+
+div.prefilled {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #0f172a;
+  color: #ffffff;
+  border: 0.5px solid #1f2937;
+}
+.cell:focus {
+  background: #334155;
+}
 .wrong {
   background: #7f1d1d;
   color: #fecaca;
