@@ -39,6 +39,7 @@ Play multiple classic games in one place fast, responsive, and visually consiste
 - Random puzzle generation
 - Timer + 3 mistake limit
 - Auto validation + solution reveal
+- Click the table cell where you want to put the number(not prefilled boxes)
 
 ---
 
