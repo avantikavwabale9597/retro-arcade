@@ -18,6 +18,7 @@ Play multiple classic games in one place fast, responsive, and visually consiste
 - Difficulty modes (Easy/Medium/Hard)
 - Score + High Score (local storage)
 - Smooth controls + sound effects
+- Use arrow keys for control
 
 ### ❌⭕ Tic Tac Toe
 
