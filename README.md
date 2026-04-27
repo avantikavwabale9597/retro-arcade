@@ -68,8 +68,3 @@ open index.html
 
 **AVA**
 
----
-
-## ⭐
-
-If you like this project, drop a ⭐ it helps!
