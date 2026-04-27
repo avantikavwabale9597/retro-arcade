@@ -16,7 +16,7 @@ Play multiple games in one place.
 ### Tic Tac Toe
 
 - 1v1 (Player vs Player)
-- Player vs Robot 🤖
+- Player vs Robot 
 - Win / Draw detection
 
 ### Color Match
