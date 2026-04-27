@@ -1,15 +1,8 @@
 # 🎮 Retro Arcade
 
-A sleek browser-based **mini arcade** built with pure HTML, CSS, and JavaScript.
-Play multiple classic games in one place fast, responsive, and visually consistent.
+A browser-based **mini arcade** built with HTML, CSS, and JavaScript.
+Play multiple games in one place.
 
----
-
-## 🚀 Live Idea
-
-> One platform. Multiple games. Endless fun.
-
----
 
 ## 🕹️ Games
 
